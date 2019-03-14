@@ -1,168 +1,141 @@
-.km-bg
-	position: absolute
-	left: 0
-	top: 0
-	right: 0
-	bottom: 0
-	z-index: -1
-	background-image: url('../img/background.jpg')
-	background-position: center
-	background-repeat: no-repeat
-	background-attachment: fixed
-	background-color: $black
-	background-size: 80%
-	height: 100vh
-	&::before
-		position: absolute
-		left: 0
-		top: 0
-		right: 0
-		bottom: 0
-		background-color: rgba($accent, .8)
-		content: ""
-		// opacity: 0.8
-		z-index: -3
-
-.full-height
-	height: 100vh
-.km-logo
-	margin-top: 40vh
-.km-social
-	position: absolute
-	left: 0
-	top: 40%
-	width: 100%
-	p
-		text-align: center
-		color: $white
-	.km-border-top
-		border-top: 1px solid $grey
-		a
-			margin-top: 10px
-			path
-				transition: 0.2s 0.2s ease
-		a:hover path
-			fill: #ff522a
-
-// NAVIGATION
-
-.km-nav
-	position: absolute
-	top: 50vh
-	background-color: transparent
-	border: none
-	color: $white
-	outline: none
-	cursor: pointer
-	&:focus
-		outline: none
-.contact
-	left: 10px
-	transform: rotate(-90deg)
-.project
-	right: 10px
-	transform: rotate(90deg)
-
-#about
-	background-image: url('../img/icons/logo-10.svg')
-	background-repeat: no-repeat
-	background-position: center
-	.km-who
-		font-weight: bold
-		line-height: 1
-		margin-top: 30vh
-		font-size: 3em
-		color: $black
-	.km-who-desc
-		line-height: 1.8
-		margin-top: 30vh
-		font-style: italic
-		color: $text
-
-
-.km-contacts
-	z-index: 3
-	position: absolute
-	top: 20%
-	left: -100vw
-	right: 0
-	background-color: $black
-	width: 100%
-	padding: 30px 0
-	transition: 0.2s 0.2s ease-in
-	a
-		float: left
-		margin: auto
-		width: 100vw
-		text-align: center
-		color: $white
-		font-size: 2em
-		transition: 0.1s 0.2s ease-in
-		&:hover
-			text-decoration: none
-			color: #ff522a
-	p
-		text-align: center
-		color: $text
-		transition: 0.2s 0.2s ease
-	.close-km-contacts:hover
-		cursor: pointer
-		color: #ff522a
-
-.km-projects
-	position: absolute
-	top: 0
-	bottom: 0
-	right: -100vw
-	width: 100%
-	height: 100%
-	background-color: $black
-	z-index: 2
-	transition: 0.2s 0.2s ease-in
-	&-bg
-		display: none
-		position: fixed
-		background-color: $black
-		left: 0
-		top: 0
-		right: 0
-		bottom: 0
-		z-index: -2
-	&-logo
-		float: left
-		width: 100%
-		padding: 20px
-	&-blocks
-		float: left
-		background-position: center
-		background-size: cover
-		width: 25%
-		transition: all 0.2s 0.2s ease
-		&:hover
-			background-size: 110%
-		&-desc
-			background-color: rgba($black, .6)
+.navbar
+	box-shadow: 0 0 10px rgba(0,0,0,.25)
+	button
+		path
+			transition: fill .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+	button:hover
+		path
+			fill: $white
+	.form-inline
+		.search
+			border: none
 			position: relative
-			width: 100%
-			height: 100%
+			left: 0px
+			float: left
+		.searchSubmit
+			position: relative
+			float: right
+			bottom: 7px
+			left: 15px
+.Blocks
+	height: 80vh
+	box-shadow: 0 0 10px rgba(0,0,0,.25)
+	border-radius: 3px
+
+.LeftSidebar
+	overflow-y: scroll
+	&::-webkit-scrollbar
+		width: 5px
+	&::-webkit-scrollbar-track
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
+	&::-webkit-scrollbar-thumb
+		background-color: $txt
+		outline: 1px solid slategrey
+		border-radius: 100px
+	.CategroiesList
+		h3
+			padding-left: 15px
+			padding-top: 15px
+			cursor: default
+			font-size: 100%
+			font-weight: bold
+		ul
+			list-style: none
+			padding-left: 15px
+			padding-right: 15px
+			li
+				padding-top: 12.5px
+				padding-bottom: 12.5px
+				border-bottom: 1px solid #ccc
+				a
+					color: $txt
+					transition: 0.2s 0.2s ease
+					&:hover
+						color: $accent
+						text-decoration: none
+				.active
+					color: $accent
+					font-weight: bold
+.ContentBlock
+	padding: 15px
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+	overflow-y: scroll
+	&::-webkit-scrollbar
+		width: 5px
+	&::-webkit-scrollbar-track
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
+	&::-webkit-scrollbar-thumb
+		background-color: $txt
+		outline: 1px solid slategrey
+		border-radius: 100px
+	.UserCard
+		// margin-top: 10px
+		margin-bottom: 20px
+		// min-height: 350px
+		padding: 20px 0px
+		width: 32%
+		border: 1px solid rgba(0,0,0,.05)
+		transition: 0.2s 0.2s ease
+		background-color: $white
+		&:hover
+			box-shadow: 0 0 10px rgba(0,0,0,.25)
+
+		text-align: center
+		.UserImage
+			width: 70%
+			height: 50%
+			border-radius: 100%
+			margin: 20px auto 0 auto
+			background-position: center
+			background-size: cover
+		.UserName
+			overflow: hidden
+			white-space: nowrap
+			text-overflow: ellipsis
 			a
-				position: relative
-				top: 40%
-				display: block
-				margin: auto
-				color: $white
-				text-align: center
-				font-size: 2em
+				font-weight: bold
+				font-size: 1.1em
+				color: $text
 				text-decoration: none
-				svg
-					position: relative
-					bottom: 10px
-			&-span
-				.start
-					color: $white
-					font-size: 2em
-					line-height: 1
-					padding-top: 35%
-					text-align: left
-					margin-left: 20%
-					cursor: pointer
+		.UserPosition
+			color: $txt
+			font-size: .8em
+		.UserHireBtn
+			margin: 10px 0
+			a
+				background-color: $accent
+				padding: 7.5px 50px
+				color: $white
+				text-decoration: none
+				border-radius: 50px
+				&:hover
+					background-color: darken($accent, 5%)
+		.f-left
+			float: left
+			margin-left: 15px
+		.f-right
+			float: right
+			margin-right: 15px
+		.UserStatus
+			float: left
+			width: 100%
+			margin-top: 20px
+			cursor: default
+			&-Now
+				font-weight: bold
+			.Available
+				color: $green
+			.Unavailable
+				color: $red
+			&-Rate
+				color: $txt
+		.UserRate
+			float: left
+			width: 100%
+			color: $txt
+			font-weight: bold
+			&-Title
+				color: $accent
+		

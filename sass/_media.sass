@@ -11,17 +11,27 @@
 
 // ≥768px
 +media-breakpoint-down(sm)
-
+	.ContentBlock
+		margin-top: 30px
+		.UserCard
+			width: 90%
 // ≥576px
 +media-breakpoint-down(xs)
-	.km-projects-blocks
-		width: 50%
-		&-desc
-			font-size: .5em
-	#about
-		.km-who-desc
-			margin-top: 10vh
+	.navbar
+		.form-inline
+			.form-control
+				.searchSubmit
+					bottom: 15px
+		&-brand
+			width: 70%
 
+	.ContentBlock
+		margin-top: 30px
+		.UserCard
+			width: 90%
+
+
+	
 /*==========  Mobile First  ==========*/
 
 // ≤576px
